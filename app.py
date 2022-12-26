@@ -44,7 +44,7 @@ class Loans(db.Model):
     loan_id = db.Column('loan_id', db.Integer, primary_key = True)
     book_id = db.Column( db.Integer,db.ForeignKey('books.book_id'))
     customer_id= db.Column( db.Integer,db.ForeignKey('customers.customer_id'))
-    loandate = db.Column(db.Integer)#switch to time
+    loandate = db.Column(db.String(50))#switch to time
     returndate = db.Column(db.Integer)#switch to time
 
     def __init__(self, loandate, returndate=0,book=0,customer=0):
